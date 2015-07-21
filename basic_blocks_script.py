@@ -25,7 +25,7 @@ np = numpy
 import theano
 import theano.tensor as T
 
-# Define "data_stream" (TODO: understand and simplify (?))
+# Define "data_stream"
 # (We use a toy dataset of two 2D gaussians with different means.)
 num_examples = 1000
 batch_size = 100
