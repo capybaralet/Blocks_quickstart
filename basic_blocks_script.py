@@ -12,7 +12,7 @@ To run an experiment, we simply construct a main_loop.MainLoop and call its
  (which needs the cost), a blocks.algorithms.TrainingAlgorithm (which needs the
  cost and parameters), and a fuel.streams.DataStream*
 
-As it is the script will run indefinitely, with no output.  You can interrupt 
+As it is the script will run indefinitely, with no output.  You can interrupt
  training training anytime with Ctrl+C, or termination conditions can be added
  via extensions.
 
@@ -25,8 +25,7 @@ np = numpy
 import theano
 import theano.tensor as T
 
-# Define "data_stream"
-# (We use a toy dataset of two 2D gaussians with different means.)
+# (Here we make a toy dataset of two 2D gaussians with different means.)
 num_examples = 1000
 batch_size = 100
 means = np.array([[-1., -1.], [1, 1]])
@@ -35,6 +34,8 @@ labels = np.random.randint(size=num_examples, low=0, high=1)
 features = means[labels, :] + std * np.random.normal(size=(num_examples, 2))
 labels = labels.reshape((num_examples, 1)).astype(theano.config.floatX)
 features = features.astype(theano.config.floatX)
+
+# Define "data_stream"
 from collections import OrderedDict
 from fuel.datasets import IndexableDataset
 # The names here (e.g. 'name1') need to match the names of the variables which
@@ -49,7 +50,7 @@ data_stream = ForceFloatX(DataStream(dataset,
 
 
 # Define "cost" and "parameters"
-# (We use logistic regression)
+# (We use logistic regression to classify points by distribution)
 inputs = T.matrix('name1')
 targets = T.matrix('name2')
 ninp, nout = 2, 1
