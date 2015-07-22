@@ -48,7 +48,6 @@ data_stream = ForceFloatX(DataStream(dataset,
                                      iteration_scheme=SequentialScheme(
                                        dataset.num_examples, batch_size)))
 
-
 # Define "cost" and "parameters"
 # (We use logistic regression to classify points by distribution)
 inputs = T.matrix('name1')
