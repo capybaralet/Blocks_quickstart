@@ -1,5 +1,5 @@
 # Blocks_quickstart
-This repo contains a simple demo of Blocks and Fuel, explaining their basic functionality.
+This repo contains a simple demo of Blocks and Fuel, demonstrating some basic functions.
 
 The idea is to help new users get started as quickly as possible.
 
