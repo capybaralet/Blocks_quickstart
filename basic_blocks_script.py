@@ -39,7 +39,7 @@ features = features.astype(theano.config.floatX)
 from collections import OrderedDict
 from fuel.datasets import IndexableDataset
 # The names here (e.g. 'name1') need to match the names of the variables which
-#  are the leaves of the computational graph for the cost.
+#  are the roots of the computational graph for the cost.
 dataset = IndexableDataset(
               OrderedDict([('name1', features), ('name2', labels)]))
 from fuel.streams import DataStream, ForceFloatX
